@@ -12,26 +12,26 @@ DELETE - видаляє. Може мати тіло, може не мати.
 
 import { addProduct, deleteProductById } from "./api/products.js";
 
-deleteProductById(62).then(({data, error})=> {
-    console.log({
-        data,
-        error,
-    });
-    if(error.status === 404) {
-        alert(error.message);
-    }
-})
-
-// const newProduct = {
-//     title: "Product title 2", 
-//     description: "Product description",
-//     price: "2000",
-//     image: "https://avatars.githubusercontent.com/u/56642676",
-// }
-
-// addProduct(newProduct).then(({data, error})=> {
+// deleteProductById(62).then(({data, error})=> {
 //     console.log({
 //         data,
 //         error,
 //     });
+//     if(error.status === 404) {
+//         alert(error.message);
+//     }
 // })
+
+const newProduct = {
+    title: "Product title 2", 
+    description: "Product description",
+    price: "2000",
+    image: "https://avatars.githubusercontent.com/u/56642676",
+}
+
+addProduct(newProduct).then(({data, error})=> {
+    console.log({
+        data,
+        error,
+    });
+})

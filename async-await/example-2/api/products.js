@@ -4,6 +4,7 @@ export const addProduct = async(payload)=> { // payload - зміна, що мі�
     try {
         const response = await fetch(baseURL, {
             method: "POST", // метод пишеться у верхньому регістрі
+            "Content-Type": "application/json",
             body: JSON.stringify(payload), // body має бути строкою, у якому форматі - визначає бекенд. JSON - найпоширеніший варіант
         });
         if(!response.ok) {
