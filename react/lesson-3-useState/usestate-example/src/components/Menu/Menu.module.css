@@ -1,0 +1,15 @@
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.link {
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    background-color: red;
+    color: #fff;
+}
+.link.active {
+    background-color: #000;
+}

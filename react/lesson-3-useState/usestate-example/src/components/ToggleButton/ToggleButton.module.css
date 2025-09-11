@@ -1,0 +1,13 @@
+.btn {
+    background-color: #fff;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: red;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.btn.active {
+    background-color: red;
+    color: #fff;
+}

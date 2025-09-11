@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        .link {
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            background-color: red;
+            color: #fff;
+        }
+        .link.active {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu" id="menu">
+        <!-- <li><a href="/" class="link active">Home</a></li>
+        <li><a href="/" class="link">Products</a></li>
+        <li><a href="/" class="link">About us</a></li>
+        <li><a href="/" class="link">Contacts</a></li> -->
+    </ul>
+    <script>
+        const menuItems = [
+            {
+                href: "/",
+                text: "Home"
+            },
+            {
+                href: "/products",
+                text: "Products"
+            },
+            {
+                href: "/about-us",
+                text: "About us"
+            },
+            {
+                href: "/contacts",
+                text: "Contacts"
+            },
+        ];
+
+        const menu = document.getElementById("menu");
+
+        let activeIndex = 0;
+
+        const handleMenuClick = ()=> {
+            const menuElements = menu.querySelectorAll(".link");
+            menuElements.forEach((element, index) => element.addEventListener("click", (e)=> {
+                e.preventDefault();
+                activeIndex = index;
+                renderMenu();
+            }));
+        }
+
+        const renderMenu = ()=> {
+            const elements = menuItems.map(({href, text}, index)=> {
+                const fullClassName = activeIndex === index ? "link active" : "link";
+                return `<li><a href="${href}" class="${fullClassName}">${text}</a></li>`
+            });
+            menu.innerHTML = elements.join("");
+            handleMenuClick();
+        }
+        renderMenu();
+
+        
+        
+    </script>
+</body>
+</html>
