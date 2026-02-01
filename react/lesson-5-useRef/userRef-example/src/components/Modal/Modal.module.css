@@ -1,0 +1,31 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.content {
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 15px;
+    min-width: 30%;
+    min-height: 20%;
+    position: relative;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
