@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import CollapseItem from "./components/CollapseItem/CollapseItem";
 import Modal from "./components/Modal/Modal";
+import Timer from "./components/Timer/Timer";
 
 import styles from "./App.module.css";
 
@@ -18,6 +19,7 @@ function App() {
       <main className={styles.main}>
         {/* <CollapseItem title="Title" text={text} /> */}
         <button onClick={modalToggle}>Open modal</button>
+        <Timer />
         <Modal open={modalOpen} close={modalToggle}>
           <p>Some text</p>
         </Modal>
