@@ -1,0 +1,75 @@
+.formTitle {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.shoppingForm {
+  margin-top: 16px;
+  max-width: 420px;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #262626;
+  background: rgba(20, 20, 20, 0.7);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.field {
+  display: block;
+  margin-top: 14px;
+}
+
+.field:first-child {
+  margin-top: 0;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #e5e5e5;
+}
+
+.input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #404040;
+  background: #0a0a0a;
+  color: #fff;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.input::placeholder {
+  color: #737373;
+}
+
+.input:focus {
+  border-color: #cdeb09;
+  box-shadow: 0 0 0 4px rgba(205, 235, 9, 0.15);
+}
+
+.totalRow {
+  margin-top: 18px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #262626;
+  background: rgba(10, 10, 10, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.totalLabel {
+  font-size: 13px;
+  color: #a3a3a3;
+}
+
+.totalValue {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
