@@ -1,0 +1,34 @@
+.shoppingLayout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* Ліва колонка — список */
+.leftCol {
+  flex: 1 1 60%;
+  min-width: 320px;
+}
+
+/* Права колонка — форма */
+.rightCol {
+  flex: 0 0 420px; /* під твій max-width форми */
+}
+
+/* Адаптив: на мобілці в стовпчик */
+@media (max-width: 900px) {
+  .shoppingLayout {
+  display: flex;
+  flex-direction: row-reverse; /* міняє місцями колонки */
+  gap: 16px;
+  align-items: flex-start;
+}
+
+  .rightCol {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+.leftCol { flex: 0 0 420px; }   /* форма */
+.rightCol { flex: 1 1 60%; }   /* список */
