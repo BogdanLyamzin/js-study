@@ -1,0 +1,7 @@
+.name {
+    font-size: 18px;
+}
+
+.name.urgency {
+    font-weight: bold;
+}

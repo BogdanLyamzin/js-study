@@ -1,0 +1,8 @@
+.item {
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.error {
+    color: red;
+}
