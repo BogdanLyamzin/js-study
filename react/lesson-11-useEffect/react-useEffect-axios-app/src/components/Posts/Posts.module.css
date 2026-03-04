@@ -1,0 +1,21 @@
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.list.mobile {
+    grid-template-columns: 1fr;
+}
+
+.item {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.error {
+    color: red;
+}

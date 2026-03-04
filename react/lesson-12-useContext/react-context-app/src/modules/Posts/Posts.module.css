@@ -1,0 +1,11 @@
+.item {
+    margin-bottom: 15px;
+}
+
+.item.light {
+    color: #1c1b1b;
+}
+
+.item.dark {
+    color: #fff;
+}

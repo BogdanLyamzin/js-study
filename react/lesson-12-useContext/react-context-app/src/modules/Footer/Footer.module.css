@@ -1,0 +1,27 @@
+.footer {
+    padding: 25px 0;
+    border-top: 2px solid;
+}
+
+.footer.light {
+    background-color: #fff;
+    border-top-color: #1c1b1b;
+}
+
+.footer.dark {
+    background-color: #1c1b1b;
+    border-top-color: #fff;
+}
+
+.copyright {
+    font-size: 20px;
+    text-align: center;
+}
+
+.copyright.light {
+    color: #1c1b1b;
+}
+
+.copyright.dark {
+    color: #fff;
+}

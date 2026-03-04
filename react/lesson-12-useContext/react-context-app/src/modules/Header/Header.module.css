@@ -1,0 +1,93 @@
+.header {
+    padding: 25px 0;
+    border-bottom: 2px solid;
+}
+
+.header.light {
+    background-color: #fff;
+    border-bottom-color: #1c1b1b;
+}
+
+.header.dark {
+    background-color: #1c1b1b;
+    border-bottom-color: #fff;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { 
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.logo.light {
+    color: #1c1b1b;
+}
+
+.logo.dark {
+    color: #fff;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.link.light {
+    color: #1c1b1b;
+}
+
+.link.dark {
+    color: #fff;
+}
+
+.link:hover {
+    font-weight: bold;
+}
+
+.themeBtn {
+    background-color: transparent;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.themeBtn.light {
+    color: #1c1b1b;
+}
+
+.themeBtn.dark {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.headerInfo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.postsCount {
+    font-size: 18px;
+}
+
+.postsCount.light {
+    color: #1c1b1b;
+}
+
+.postsCount.dark {
+    color: #fff;
+}

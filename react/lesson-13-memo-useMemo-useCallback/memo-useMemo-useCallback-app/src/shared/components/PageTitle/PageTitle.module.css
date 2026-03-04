@@ -1,0 +1,13 @@
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.title.light {
+    color: #1c1b1b;
+}
+
+.title.dark {
+    color: #fff;
+}

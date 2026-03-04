@@ -1,0 +1,11 @@
+.main {
+    padding: 30px;
+}
+
+.main.light {
+    background-color: #fff;
+}
+
+.main.dark {
+    background-color: #1c1b1b;
+}
