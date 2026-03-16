@@ -1,0 +1,10 @@
+.group {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.error {
+    color: red;
+}
