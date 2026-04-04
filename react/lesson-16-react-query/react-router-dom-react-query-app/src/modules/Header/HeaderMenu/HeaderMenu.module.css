@@ -1,0 +1,28 @@
+
+.menu {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.link:global(.active) {
+    font-weight: bold;
+}
+
+.link.light {
+    color: #1c1b1b;
+}
+
+.link.dark {
+    color: #fff;
+}
+
+.link:hover {
+    font-weight: bold;
+}

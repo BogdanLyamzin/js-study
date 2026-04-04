@@ -1,13 +1,20 @@
-import { createFileRoute, notFound } from '@tanstack/react-router';
+import { createFileRoute, notFound, useNavigate, Link, Outlet } from '@tanstack/react-router';
+
+import Error from "#/components/Error";
+import { LoadingWrapper } from './index';
 
 import { getPostById } from '#/shared/api/posts-api';
 
 export const Route = createFileRoute('/posts/$postId')({
   component: RouteComponent,
-  loader: async ({params})=> {
+  loader: async ({context, params})=> {
     try {
-      const data = await getPostById(params.postId);
-      return data;
+      const {queryClient} = context;
+      return await queryClient.ensureQueryData({
+        queryKey: ["post", params.postId],
+        queryFn: ()=> getPostById(params.postId),
+        staleTime: 60_000,
+      });
     }
     catch(error) {
       if(error.status === 404) {
@@ -16,7 +23,9 @@ export const Route = createFileRoute('/posts/$postId')({
       throw error;
     }
   },
+  pendingComponent: LoadingWrapper,
   notFoundComponent: NotFoundPost,
+  errorComponent: () => <Error message="Error loading posts" />,
 })
 
 function NotFoundPost () {
@@ -35,16 +44,27 @@ function NotFoundPost () {
 
 function RouteComponent() {
   const {title, body} = Route.useLoaderData();
+  const {postId} = Route.useParams();
+
+  const navigate = useNavigate();
+
+  const goBack = ()=> navigate({
+    to: -1
+  });
 
   return (
     <main className="page-wrap px-4 py-12">
+      <button className='cursor-pointer' onClick={goBack}>Go back</button>
       <section className="island-shell rounded-2xl p-6 sm:p-8">
+        
         <h1 className="display-title mb-3 text-4xl font-bold text-[var(--sea-ink)] sm:text-5xl">
         {title}
         </h1>
         <p className="m-0 max-w-3xl text-base leading-8 text-[var(--sea-ink-soft)]">
           {body}
         </p>
+        <Link to="/posts/$postId/comments" params={{postId}}>comments</Link>
+        <Outlet />
       </section>
     </main>
   )

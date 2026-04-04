@@ -1,0 +1,8 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 300px 300px;
+}
+
+.error {
+    color: red;
+}
