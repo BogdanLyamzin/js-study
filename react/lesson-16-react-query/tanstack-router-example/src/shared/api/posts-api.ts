@@ -24,3 +24,13 @@ export const getPostByIdComments = async id => {
     const {data} = await postsInstance.get(`/${id}/comments`);
     return data;
 }
+
+export const addPostApi = async payload => {
+    const {data} = await postsInstance.post("/", payload);
+    return data;
+}
+
+export const deletePostApi = async id => {
+    const {data} = await postsInstance.delete(`/${id}`);
+    return data;
+}

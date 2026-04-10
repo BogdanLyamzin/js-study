@@ -1,7 +1,7 @@
 import { HeadContent, Scripts, createRootRouteWithContext } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
-import type { QueryClient } from '@tanstack/react-query'
+import {QueryClientProvider, type QueryClient } from '@tanstack/react-query'
 
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -37,6 +37,7 @@ export const Route = createRootRouteWithContext<{queryClient: QueryClient}>()({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const {queryClient} = Route.useRouteContext();
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -44,7 +45,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="font-sans antialiased [overflow-wrap:anywhere] selection:bg-[rgba(79,184,178,0.24)]">
-        <Header />
+       <QueryClientProvider client={queryClient}>
+       <Header />
         {children}
         <Footer />
         <TanStackDevtools
@@ -59,6 +61,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           ]}
         />
         <Scripts />
+       </QueryClientProvider>
+       
       </body>
     </html>
   )

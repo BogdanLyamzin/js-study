@@ -1,10 +1,18 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router';
+import { useSuspenseQuery } from "@tanstack/react-query";
+
+import { getPosts } from '#/shared/api/posts-api';
 
 export const Route = createFileRoute('/about')({
   component: About,
 })
 
 function About() {
+  const {data: posts} = useSuspenseQuery({
+    queryKey: ["posts"],
+    queryFn: ()=> getPosts(),
+});
+console.log(posts)
   return (
     <main className="page-wrap px-4 py-12">
       <section className="island-shell rounded-2xl p-6 sm:p-8">
