@@ -1,4 +1,12 @@
-const MyBooksList = ({ items = [], onDeleteBook }) => {
+import { useDispatch } from "react-redux";
+
+import { deleteBook } from "../../../redux/actionCreator";
+
+const MyBooksList = ({ items = [] }) => {
+  const dispatch = useDispatch();
+
+  const onDeleteBook = id => dispatch(deleteBook(id));
+
   const elements = items.map(({ id, name, author, favorite }) => (
     <li style={{ fontWeight: favorite ? "bold" : "normal" }} key={id}>
       Name: {name}. Author: {author}

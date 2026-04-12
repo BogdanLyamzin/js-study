@@ -19,7 +19,7 @@ const MyBooksForm = ({submitForm})=> {
                 {errors.author && <p style={{color: "red"}}>{errors.author.message}</p>}
             </div>
             <div>
-                <input type="checkbox" {...register("favorite", {required: true})} />
+                <input type="checkbox" {...register("favorite")} />
             </div>
             <button>Add book</button>
         </form>
